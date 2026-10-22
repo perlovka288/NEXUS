@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Game Tracker — каталог и трекер игр Steam</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Cpath d='M9 16h6M12 13v6' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3Ccircle cx='21' cy='17' r='1.6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#" id="logo"></a>
+  <div class="search">
+    <input id="q" type="search" placeholder="Поиск игры…" autocomplete="off" aria-label="Поиск игр">
+    <ul id="sug" class="sug" hidden></ul>
+  </div>
+  <nav id="nav" aria-label="Разделы"></nav>
+</header>
+<main id="home">
+  <div class="pagehead"><h1 id="h1"></h1><p id="sub" class="mut"></p></div>
+  <div id="stats" class="stats"></div>
+  <div class="tools"><div id="chips" class="chips2"></div><label class="mut sortl">Сортировка <select id="sort"></select></label></div>
+  <div id="rows"></div>
+  <section id="grid" class="grid" aria-live="polite"></section>
+  <p id="empty" class="empty mut" hidden></p>
+  <div class="morewrap"><button id="more" class="btn big" hidden></button></div>
+</main>
+<section id="page" hidden></section>
+<div id="lb" class="lb" hidden role="dialog" aria-modal="true" aria-label="Просмотр скриншота"></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

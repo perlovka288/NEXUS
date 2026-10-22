@@ -1,0 +1,47 @@
+{
+  "name": "game-tracker",
+  "version": "2.1.0",
+  "description": "Библиотека игр с автоматическим учётом времени",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "web": "node server.js",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.gametracker.app",
+    "productName": "Game Tracker",
+    "copyright": "Game Tracker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "server.js",
+      "lib/**",
+      "public/**",
+      "assets/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Game Tracker",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "Game-Tracker-Setup-${version}.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
